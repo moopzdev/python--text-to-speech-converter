@@ -1,9 +1,13 @@
-from cgitb import text
 from tkinter import *
+from gtts import gTTS
 
 
 def _convert():
     print("Its being converted")
+    inputted_text = text_entry.get()
+    language = 'en'
+    speech = gTTS(text=inputted_text, lang=language, slow=False)
+    speech.save("sound.mp3")
 
 
 root = Tk()
